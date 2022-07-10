@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>Cars</title>
+</head>
+<body>
+<div th:switch="${cars}">
+    <h2 th:case="null">No cars found</h2>
+    <div th:case="*">
+        <h2>Cars</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Horse Power</th>
+                <th>Year of production</th>
+                <th>Price</th>
+                <th>Owners</th>
+                <th>Acceleration</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="car : ${cars}">
+                <td th:text="${car.id}"></td>
+                <td th:text="${car.make}"></td>
+                <td th:text="${car.model}"></td>
+                <td th:text="${car.horsePower}"></td>
+                <td th:text="${car.yearOfProduction}"></td>
+                <td th:text="${car.price}"></td>
+                <td th:text="${car.owners}"></td>
+                <td th:text="${car.acceleration}"></td>
+                <td><a th:href="@{car-update/{id}(id=${car.id})}">Edit</a></td>
+                <td><a th:href="@{cars/delete/{id}(id=${car.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/cars/create">Create car</a></p>
+</div>
+</body>
+</html>
