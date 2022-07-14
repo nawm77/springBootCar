@@ -36,7 +36,7 @@ public class CarController {
     @PostMapping("/cars/create")
     public String createCar(@Valid Car car, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-
+            return "carCreate";
         }
         carService.saveCar(car);
         return "redirect:/cars";

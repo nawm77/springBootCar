@@ -9,24 +9,31 @@ xmlns:th="http://thymeleaf.org">
 <form action="#" th:action="@{/cars/create}" th:object="${car}" method="post">
     <label for="make">Make</label>
     <input type="text" th:field="*{make}" id="make" placeholder="Make">
+    <div style="color: red" th:if="${#fields.hasErrors('make')}" th:errors="*{make}">Make error</div>
     <br/>
     <label for="model">Model</label>
     <input type="text" th:field="*{model}" id="model" placeholder="Model">
+    <div style="color: red" th:if="${#fields.hasErrors('model')}" th:errors="*{model}">Model error</div>
     <br/>
     <label for="horsePower">Horse power</label>
     <input type="text" th:field="*{horsePower}" id="horsePower" placeholder="Horse power">
+    <div style="color: red" th:if="${#fields.hasErrors('horsePower')}" th:errors="*{horsePower}">Horse power error</div>
     <br/>
     <label for="yearOfProduction">Year of production</label>
     <input type="text" th:field="*{yearOfProduction}" id="yearOfProduction" placeholder="Year of production">
+    <div style="color: red" th:if="${#fields.hasErrors('yearOfProduction')}" th:errors="*{yearOfProduction}">Year of production error</div>
     <br/>
     <label for="price">Price</label>
     <input type="text" th:field="*{price}" id="price" placeholder="Price">
+    <div style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price error</div>
     <br/>
     <label for="owners">Owners</label>
     <input type="number" th:field="*{owners}" id="owners" placeholder="Owners">
+    <div style="color: red" th:if="${#fields.hasErrors('owners')}" th:errors="*{owners}">Owners count error</div>
     <br/>
     <label for="acceleration">Acceleration</label>
     <input type="text" th:field="*{acceleration}" id="acceleration" placeholder="Acceleration">
+    <div style="color: red" th:if="${#fields.hasErrors('acceleration')}" th:errors="*{acceleration}">Acceleration time error</div>
     <br/>
     <input type="submit" value="Create car">
 </form>
