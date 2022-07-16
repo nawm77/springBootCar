@@ -16,7 +16,7 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name="make")
-    @Size(min = 2, max = 20, message = "Размер текста должен быть не менее 2 - х и не более 20 символов")
+    @Size(min = 2, max = 20, message = "Размер марки должен быть не менее 2 - х и не более 20 символов")
     @NotEmpty(message = "Марка не божет быть пустой")
     private String make;
     @Column(name="model")

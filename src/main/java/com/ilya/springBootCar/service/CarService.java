@@ -1,7 +1,7 @@
 package com.ilya.springBootCar.service;
 
 import com.ilya.springBootCar.model.Car;
-import com.ilya.springBootCar.repository.UserRepository;
+import com.ilya.springBootCar.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,26 +9,26 @@ import java.util.List;
 
 @Service
 public class CarService {
-    private final UserRepository userRepository;
+    private final CarRepository carRepository;
 
     @Autowired
-    public CarService(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public CarService(CarRepository carRepository) {
+        this.carRepository = carRepository;
     }
 
     public Car findById(Long id){
-        return userRepository.getOne(id);
+        return carRepository.getOne(id);
     }
 
     public List<Car> findAll(){
-        return userRepository.findAll();
+        return carRepository.findAll();
     }
 
     public Car saveCar(Car car){
-        return userRepository.save(car);
+        return carRepository.save(car);
     }
 
     public void deleteById(Long id){
-        userRepository.deleteById(id);
+        carRepository.deleteById(id);
     }
 }
