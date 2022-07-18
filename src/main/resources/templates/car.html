@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${car.getMarkModel()}">Автомобиль</title>
+</head>
+<body>
+<p th:text="${car.toString1()}">Value</p>
+<p th:text="${car.toString2()}">Value</p>
+<p th:text="${car.toString3()}">Value</p>
+<p th:text="${car.toString4()}">Value</p>
+<form th:method="GET" th:action="@{/vehicles/cars/{id}/edit(id=${car.getId()})}">
+    <input type="submit" value="Edit">
+</form>
+<form th:method="DELETE" th:action="@{/vehicles/cars/{id}(id=${car.getId()})}">
+    <input type="submit" value="Delete">
+</form>
+</body>
+</html>

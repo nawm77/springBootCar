@@ -28,6 +28,12 @@ public class CarController {
         return "carList";
     }
 
+    @GetMapping("/cars/{id}")
+    public String findCarById(@PathVariable("id") Long id, Model model){
+        model.addAttribute("car", carService.findById(id));
+        return "car";
+    }
+
     @GetMapping("/cars/create")
     public String createCarForm(Car car){
         return"carCreate";

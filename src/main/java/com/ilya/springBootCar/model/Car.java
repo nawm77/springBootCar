@@ -39,4 +39,55 @@ public class Car {
     @Column(name="acceleration")
     @Min(value = 1, message = "Ускорение не может быть меньше 1 секунды")
     private float acceleration;
+
+
+    public String getMake() {
+        return make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getHorsePower() {
+        return horsePower;
+    }
+
+    public int getOwners() {
+        return owners;
+    }
+
+    public int getYearOfProduction() {
+        return yearOfProduction;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public double getAcceleration() {
+        return acceleration;
+    }
+
+    public String getMarkModel(){
+        return String.format(getMake() +" " + getModel());
+    }
+
+    public String toString1(){
+        return getMake() + " " + getModel();
+    }
+
+    public String toString2(){
+        return getYearOfProduction() + " year of production" +
+                " with " + getOwners() + " owners and " + getHorsePower() + " horse power";
+    }
+
+    public String toString3(){
+        return "Acceleration 0-100:" + getAcceleration() +
+                " sec";
+    }
+
+    public String toString4(){
+        return "Price is " + getPrice() + " EUR";
+    }
 }
